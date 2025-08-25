@@ -20,7 +20,7 @@ const App = () =>{
   }
   const convertcurrency=async()=>{
     try {
-        const {data} = await axios.get(`http://localhost:4000/convert?base_currency=${basecurrency}&currencies=${selectedcurrency}`)
+        const {data} = await axios.get(`https://currency-bakend.onrender.com/convert?base_currency=${basecurrency}&currencies=${selectedcurrency}`)
         let result= Object.values(data.data)[0] * amount
         let roundres=result.toFixed(2)
         const countryCode = currencies.find(currency => currency.code === selectedcurrency)
